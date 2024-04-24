@@ -1,0 +1,8 @@
+addPatron, 7653421
+addPatron, 1984576
+addPatron, 7633321
+addBook, 076798818x, "A"
+addBook, 123456789x, "B"
+addBook, 987654321y, "C"
+checkout, 7653421, 076798818x
+checkin, 7653421, 123592658y
