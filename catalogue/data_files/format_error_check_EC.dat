@@ -1,0 +1,6 @@
+addPatron, @NIEEL12
+addbookk, 0123456789Z, "Ooga Booga"
+checkout, @NIEEL12, 01234X6789Z
+checkin, @NIEEL12, 012345X789Z
+removeBook, 012345X789Z
+removePatron, @NIEEL12

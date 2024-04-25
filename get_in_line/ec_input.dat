@@ -1,0 +1,6 @@
+arrive, alice, 100
+arrive, carol, 95
+service
+service
+arrive, jim, 5
+arrive, bob, 0
