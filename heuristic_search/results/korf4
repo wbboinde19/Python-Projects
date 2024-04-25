@@ -1,0 +1,5 @@
+#start data file format 4
+#pair  "wall start date"	"Wed Jan 27 15:52:23 2021"
+#pair  "wall start time"	"1.61178e+09"
+#pair  "machine id"	"katsura-Linux-5.4.0-64-generic-x86_64"
+#pair  "cost"	"unit"

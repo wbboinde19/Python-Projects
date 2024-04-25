@@ -1,0 +1,17 @@
+To conclude work for the January term, take some time to write up the work you've done. The main goals of this will be to reflect on the related ideas and knowledge you drew upon for your work, the details of the work you did and results you reached, and the future questions or work that you see following naturally from this work. Your writeup should include the following sections. A recommended length for each would be 2-3 paragraphs, but the goal is to provide enough information, neither leaving ideas incomplete nor being overly wordy or redundant.
+
+1. Introduction & Related Work
+
+Give an overview of your understanding of the field of heuristic search and the way the wok you did fits into the larger picture. This should start with an overvall view of heuristic search and then include information about other algorithms, concepts, and knowledge that you drew upon in your work. In an academic paper this section would focus exclusively on other research, but you can write about learning from other classes or general CS knowledge.
+
+2. Description of Work
+
+Give information about the specific work you did. What algorithm(s) did you implement on what domain(s)? What types of problems did you test it on, using what computing resources? This is a section in which you could give pseudocode or describe structures within your code, but should not include actual code. You'll submit that separately.
+
+3. Results
+
+Describe the outcomes of your work and how your algorithm implementation(s) performed on the given domain(s). Describe the important features of the algorithm(s) you implemented (ex: optimal solution, minimal number of expansions, bounded suboptimality, etc.) and what you did to prove that these features were true of your implementation. You can include graphs, give specific details about problem instances you succeeded on, and/or talk about the limitations you observed in your implementation (such as it solving problems requiring up to a certain number of expansions.
+
+4. Questions & Future Work
+
+In this section, you will describe what questions have arisen for you in the work you did, what things could stand to be improved upon in your algorithm(s)/implementation(s), or what new work could be done based on what you learned. It is important not to simply list a question or an opportunity for more work, but to give some direction as to how that work could be done. What would be some possible next steps to answer the question or begin the related work?

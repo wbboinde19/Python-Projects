@@ -1,0 +1,109 @@
+Research Question:
+How does heuristic search cost bounds affect the number of nodes generated and expanded?
+How does the path based error affect the outcome of the algorithm(in terms of nodes generated and expanded)?
+
+Readings:
+A* search is a heuristic search algorithm that, like uniform cost search, produces
+optimal cost solutions to a problem should one exist, provided the heuristic is admissible. 
+Admissible heuristics always underestimate the true cost-to-go from the state on which they
+are computed to the goal. The cost optimality argument is that if h(n) is an underestimate of the cost-to-go,
+then, f(n) must also be an underestimate of the total cost of a solution through n. Thus, evaluating based on the
+lowest f(n) should provide a cost optimal solution.
+
+How about heuristics which may potentially overestimate the cost-to-go from a state to the goal?
+
+Bounded Cost search:
+Return solutions within a bounded factor of the optimal cost solution, these algorithms seek to find any solution 
+beneath a user-supplied cost bound C as quickly as possible. Potential search (PTS) is a bounded cost search algorithm 
+based on considering the potential of all nodes that have been generated but not yet expanded (i.e. nodes on open).
+The potential of a node is the probability that a solution of cost no more than C exists beneath that node. The potential 
+of a node n is PTc(n) = Pr(g(n) + h*(n) < C), where h*(n) is the true cost to go.
+PTS is a best-first search on PTc• In general, we don't know how to calculate the
+potential of a node. However, for some cases it is possible to order the nodes according
+to their potential without being able to calculate it. If we know how h(n) and h*(n) are
+related then there are situations where we can order the nodes by their potential without
+being able to calculate it directly. In particular, if h(n) and h* (n) are related linearly, then we can order the nodes in order
+of their relative potentials without bothering to compute the potential of the two nodes
+
+What is the relationship between h(n) and h*(n)?
+
+Use the Path based Error Model to perform a heuristic correction and apply it to see the difference.
+
+What is the Path based error of the A* algorithm?
+How does the path based error affect the outcome of the algorithm(in terms of nodes generated and expanded)?
+What is the relationship between h(n) and h*(n)?
+
+Work:
+
+Error = [h(parent)-g(child)]-h(child)
+
+What the error tells us:
+When error is negative, we underestimated our parent heuristic
+When error is positive, we overestimated our parent heuristic
+
+
+Approach.
+Gather data on the different cost models and see if you can extablish a relationship
+Make sure your Error Calculation is on point for the specific algorithms.
+Based on The error calculation, we can try explain how the error affects the results of each cost model 
+
+Goal 1:
+Complete the collection of the data of the different cost models
+Go over the error calculation again and affirm the methodologies
+Apply the error calculation to the different algorithms
+Look into how we can use the error calculation to explain the behaviour of our algorithm
+
+Interpretation of data collected:
+We want to see how the different cost models affect the number of nodes generated and expanded.
+Thus, the independet variable should be the cost model. The dependent should be the number of nodes generated/expanded.
+
+Goal 2:
+From the nature of the graphs, to deduce hypothesis that can predict the nature of the graph/behaviour of the cost models, 
+    1. I need to use the my understanding of the different cost models, look into the intitial state of each puzzle and try to 
+establish a connection.
+        a. First use the arrangement of each tile in the start state and see if there is a connection.
+        b. Try to see if you can use the errors generated to develop a connection 
+
+Things to clarify to help generate the connection:
+1. How each cost model works.
+2. A detailed understand of errors and how the affect the outcome of each search.
+
+Results:
+All puzzles for which nodes expanded in unit is greater that heavy:
+Puzzle number:    012,   004,    042,   061,    073,   079,   009,    094,   095,   097
+Puzzle distan:    035,   042,    030,   031,    037,   028,   032,    045,   034,   032
+puzzle heuris:    302,   335,    249,   248,    294,   232,   226,    335,   261,   271
+Product      : 10,570, 14,070, 7,380, 7,688, 10,878, 6,496, 7,232, 15,075, 8,874, 8,672.
+unit Soln Cst:     45,    56,     42,    45,     49,    42,    46,     53,    50,    44.
+heavy Sln Len      46,    59,     46,    50,     49,    47,    47,     54,    53,    45.
+heavy Sln Cst:    340,   429,    313,   316,    350,   314,   324,    383,   373,   325.
+h vs d ratio :  8.629, 7.976,  8.300, 8.000,  7.945, 8.286, 7.063,   7.44, 7.676, 8.469.
+HScst/HSlen  :  7.391, 7.271,  6.804, 6.320,  7.143, 6.681, 6.894,  7.093, 7.038, 7.222. 
+
+
+heavy greater than unit:
+Puzzle number:    019,    028,    030,    031,    045,    047,    048,    055,    057,    071,    074,    081,    085,    086,    090,    093.
+puzzle distan:    036,    036,    035,    038,    039,    035,    039,    029,    036,    030,    046,    039,    032,    035,    036,    034.
+puzzle heuris:    298,    331,    302,    304,    324,    324,    284,    255,    274,    245,    369,    340,    259,    262,    270,    257.
+Porduct:       10,728, 11,916,  10,570, 11,552, 12,636, 11,340, 11,076,  7,395,  9,864,  7,350, 16,974, 13,260,  8,288,  9,170,  9,720,  8,738.
+unit Soln Cst:     46,     52,      47,     50,    51,     47,     49,     41,     50,     44,      56,    53,     44,     45,     50,     46.
+heavy Sln Len:     47,     53,	    48,		51,	   54,	   48,	   50,	   42,	   57,	   51,	    57,	   56,	   49,	   46,	   51,     47.
+heavy Sln Cst:    368,    427,     386,    400,    394,    406,    348,    325,    376,    321,    463,    444,    316,    325,    396,    353.
+h vs d ratio :  8.278,	9.194,	 8.629,	 8.000,	 8.308,	 9.257,	 7.282,	 8.793,	 7.611,	 8.167,	 8.022,	 8.718,	 8.094,	 7.486,	 7.500,	 7.559.
+HScst/HSlen  :  7.830,	8.057, 	 8.042	 7.843	 7.296	 8.458	 6.960	 7.738	 6.596	 6.294	 8.123	 7.929	 6.449	 7.065	 7.765	 7.511
+
+Observations: 
+In general, we expect the Unit cost model to do better than than the heavy in terms of nodes expanded. 
+Looking at heavy Solution Costs to heavy solution length ratio, We can say that for ratios below 7.8, the heavy cost model solves the puzzle with relatively less nodes expanded. 
+
+If I am going to base how better or how worse the heavy cost model does relative to the unit cost model, then I can use:
+[(difference in nodes expanded)/(maximum nodes expanded by heavy)]*100.
+From this, the greater the percentage, the worse the performance. Note that a difference could go in the negatives which means that heavy deos better than unit. 7.8 in relation to the percentage of my data is ~60% anything higher does worse(except korf100/48)
+
+The error in the h and d calculations prevents us from using the h vs d ratio in determining how better a puzzle is solved. ie no visible pattern seen.
+
+
+Using the knowledge of the heavey in a unit setting.
+looking into ratios in Soln lengths and costs
+How much better heavy does?/how much worse heavy does? wrt the ratios
+Check if most of better ratios are in the lesser nodes expanded for heavy.
