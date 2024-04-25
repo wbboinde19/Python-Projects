@@ -6,3 +6,5 @@ venv/
 *.log
 *.out
 *.tmp
+*.mp3
+ta-lib/
