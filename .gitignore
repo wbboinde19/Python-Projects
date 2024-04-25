@@ -3,6 +3,6 @@ __pycache__/
 .vscode/
 node_modules/
 venv/
-.log
-.out
-.tmp
+*.log
+*.out
+*.tmp
